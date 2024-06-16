@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - Task 6</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .inputLabel {
+        display: block;
+        font-weight: bold;
+        font-size: 10pt;
+        margin-bottom: 5px;
+      }
+
+      .inputField {
+        border: 1px solid rgb(200, 200, 200);
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .login {
+        color: white;
+        background-color: rgb(73, 144, 73);
+        border: 1px solid rgb(200, 200, 200);
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .rememberMe {
+        margin-bottom: 20px;
+      }
+
+      .moreOptions {
+        background-color: rgb(232, 230, 230);
+        border: 1px inset rgb(231, 231, 231);
+        padding: 20px;
+        text-align: left;
+      }
+
+      .cancel {
+        color: white;
+        background-color: rgb(240, 32, 32);
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+        width: 70px;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      .forgotPass {
+        float: right;
+        font-size: 9pt;
+        margin-top: 25px;
+      }
+
+      .forgotPass a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .forgotPass a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../images/img2.jpg" height="200px" alt="Image" />
+      <form action="/submit" method="post">
+        <div>
+          <label for="username" class="inputLabel">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter Username"
+            class="inputField"
+          />
+        </div>
+
+        <div>
+          <label for="password" class="inputLabel">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            class="inputField"
+          />
+        </div>
+
+        <input
+          type="button"
+          value="Login"
+          class="login"
+          onclick="handleLogin()"
+        />
+
+        <div><input type="checkbox" class="rememberMe" />Remember me</div>
+
+        <div class="moreOptions">
+          <input
+            type="button"
+            class="cancel"
+            value="Cancel"
+            onclick="handleCancel()"
+          />
+          <p class="forgotPass">Forgot <a href="#">Password?</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function handleLogin() {
+        alert("Login button clicked");
+      }
+
+      function handleCancel() {
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+      }
+    </script>
+  </body>
+</html>
